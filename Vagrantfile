@@ -6,7 +6,13 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos65_mroonga"
-  config.vm.box_url = "./builds/CentOS-6.5-x86_64-with-mroonga.box"
+
+  # If one wants to build yourself vagrant box with packer,
+  # please replace url as follows:
+  # config.vm.box_url = "./builds/CentOS-6.5-x86_64-with-mroonga.box"
+  # And then, execute following command:
+  # `% packer build -only=virtualbox-iso template.json`
+  config.vm.box_url = "https://github.com/cosmo0920/packer-centos65-with-mroonga/releases/download/v0.1.0/CentOS-6.5-x86_64-with-mroonga.box"
 
   # config.vm.box_check_update = true
 
