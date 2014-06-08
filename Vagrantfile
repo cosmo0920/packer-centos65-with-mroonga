@@ -8,6 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos65_mroonga"
   config.vm.box_url = "./builds/CentOS-6.5-x86_64-with-mroonga.box"
 
+  # config.vm.box_check_update = true
+
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
   config.vm.network "private_network", ip: "192.168.33.110"
