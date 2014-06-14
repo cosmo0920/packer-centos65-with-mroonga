@@ -4,5 +4,5 @@ build:
     - bundle-install
 
     - script:
-        name: Run packer build
-        code: ls -R $HOME/packer/packer && $HOME/packer/packer build -only=virtualbox-iso template.json
+        name: Run packer validate
+        code: $HOME/packer/packer validate -only=virtualbox-iso template.json
