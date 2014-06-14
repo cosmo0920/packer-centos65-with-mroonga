@@ -1,0 +1,8 @@
+box: cosmo0920/vagrantbox-ci-base@0.0.1
+build:
+  steps:
+    - bundle-install
+
+    - script:
+        name: Run packer build
+        code: ls -R $HOME/packer/packer && $HOME/packer/packer build -only=virtualbox-iso template.json
